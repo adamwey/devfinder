@@ -24,6 +24,7 @@ export function UserHeader({ avatar, name, login, created_at }: UserHeaderProps)
           <a
             href={`https://github.com/${login}`}
             className='text-primary-100 hover:underline'
+            target='_blank'
           >
             @{login}
           </a>

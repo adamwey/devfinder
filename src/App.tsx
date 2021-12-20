@@ -12,10 +12,11 @@ export function App() {
   function handleSubmit(e: any) {
     e.preventDefault();
     setUsername(query);
+    setQuery('');
   }
 
   return (
-    <div className='flex w-full items-center justify-center min-h-screen flex-col px-4'>
+    <div className='flex flex-col items-center justify-center w-full min-h-screen px-4'>
       <div className='w-full max-w-sm sm:max-w-xl lg:max-w-screen-md'>
         <Header />
 
@@ -26,7 +27,7 @@ export function App() {
         />
 
         {data && (
-          <div className='bg-dark-mode-100 dark:bg-dark-mode-200 p-8 rounded-2xl flex flex-col space-y-5 lg:space-y-0'>
+          <div className='flex flex-col p-8 space-y-5 bg-dark-mode-100 dark:bg-dark-mode-200 rounded-2xl lg:space-y-0'>
             <UserHeader
               avatar={data.avatar_url}
               name={data.name}
@@ -34,9 +35,9 @@ export function App() {
               created_at={data.created_at}
             />
 
-            <div className='flex flex-col space-y-8 grid grid-rows-3 grid-cols-4'>
+            <div className='grid grid-cols-4 grid-rows-3 space-y-8'>
               {data.bio && (
-                <p className='col-start-1 lg:col-start-2 col-end-5 text-primary-300 dark:text-dark-mode-100'>
+                <p className='col-start-1 col-end-5 lg:col-start-2 text-primary-300 dark:text-dark-mode-100'>
                   {data.bio}
                 </p>
               )}

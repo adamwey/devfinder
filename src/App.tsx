@@ -6,7 +6,7 @@ import './index.css';
 
 export function App() {
   const [query, setQuery] = useState('');
-  const [username, setUsername] = useState('abdiweyrah');
+  const [username, setUsername] = useState('gaearon');
   const { data } = useProfile(username);
 
   function handleSubmit(e: any) {
